@@ -1,0 +1,97 @@
+.container {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "header header header"
+    "link link link"
+    "main main main"
+    "footer footer footer";
+}
+@media (min-width: 100px) {
+    .container {
+
+        grid-template-rows: 0.5fr 0.5fr 1.5fr 0.5fr;
+        grid-template-areas:
+        "header"
+        "link"
+        "main"
+        "footer";
+    }
+.item-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+}
+
+@media (min-width: 900px){
+    .container {
+        grid-template-rows: 0.5fr 2fr 0.5fr;
+        grid-template-columns: .25fr 2fr;
+        grid-template-areas: 
+        "header header"
+        "link main"
+        "link footer";
+    }
+    .item-2 {
+        /* This is to make the item-2 div a column */
+        flex-direction: column;      
+    }
+
+    .item-3{
+        /* This is to make the item-3 div a row */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    img {
+        /* This is so the image doesn't take the whole row */
+        max-width: 50%;
+        /* This makes the image to not loose it's proper ratio */
+        object-fit: contain;
+    }
+}
+
+/* we create the class item-1 */
+.item-1 {
+    /* we assign this class to header in the grid area */
+    grid-area: header; 
+    /* this is to use flexbox properties */
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+.item-2 {
+    grid-area: link;
+ 
+}
+
+.item-3 {
+    grid-area: main;
+}
+
+.item-4 {
+    grid-area: footer;
+}
+
+
+img{
+    max-width: 100%;
+}
+
+
+a {
+    align-items: center;
+}
+
+.container h1 {
+    justify-content: space-evenly;
+}
